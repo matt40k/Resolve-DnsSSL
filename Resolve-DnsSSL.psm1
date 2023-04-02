@@ -24,6 +24,7 @@
    Provider -domains github.com -Type A -Provider Google
 
 #>
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12;
 Function Resolve-DnsSSL {
  param (
 	[Parameter(Mandatory=$True)]
