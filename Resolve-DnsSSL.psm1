@@ -1,4 +1,30 @@
-Function Resolve-DnsSSL{
+<#
+ .Synopsis
+  Resolve a DNS record over HTTPS
+
+ .Description
+  Displays a visual representation of a calendar. This function supports multiple months
+  and lets you highlight specific date ranges or days.
+
+ .Parameter Domains
+  DNS domains
+
+ .Parameter Type
+  DNS record types - default is A record.
+
+ .Parameter Provider
+  DNS over HTTPS resolver provider - options are Cloudflare, Google or Quad9. Default is Cloudflare
+
+ .Example
+   # Show a default display of this month.
+   Provider -domains github.com 
+
+ .Example
+   # Display a date range.
+   Provider -domains github.com -Type A -Provider Google
+
+#>
+Function Resolve-DnsSSL {
  param (
 	[Parameter(Mandatory=$True)]
 	[array]$domains,
