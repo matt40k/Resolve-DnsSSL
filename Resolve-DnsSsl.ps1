@@ -1,10 +1,44 @@
+
+<#PSScriptInfo
+
+.VERSION 1.0
+
+.GUID f132689b-b5f4-438a-bd99-fe9f2b0334fa
+
+.AUTHOR matt@matt40k.uk
+
+.COMPANYNAME
+
+.COPYRIGHT
+
+.TAGS
+
+.LICENSEURI https://raw.githubusercontent.com/matt40k/Resolve-DnsSSL/main/LICENSE
+
+.PROJECTURI https://github.com/matt40k/Resolve-DnsSSL
+
+.ICONURI
+
+.EXTERNALMODULEDEPENDENCIES 
+
+.REQUIREDSCRIPTS
+
+.EXTERNALSCRIPTDEPENDENCIES
+
+.RELEASENOTES
+Inital release - supports CloudFlare, Google, Quad9
+
+.PRIVATEDATA
+
+#> 
+
+
 <#
  .Synopsis
   Resolve a DNS record over HTTPS
 
  .Description
-  Displays a visual representation of a calendar. This function supports multiple months
-  and lets you highlight specific date ranges or days.
+  DNS over HTTPS (DoH) uses the HTTPS protocol for sending and retrieving encrypted DNS queries and responses. The DoH protocol has been published as a proposed standard by the IETF as RFC 8484.
 
  .Parameter Domains
   DNS domains
@@ -17,11 +51,11 @@
 
  .Example
    # Show a default display of this month.
-   Provider -domains github.com 
+   Resolve-DnsSSL -domains github.com 
 
  .Example
    # Display a date range.
-   Provider -domains github.com -Type A -Provider Google
+   Resolve-DnsSSL -domains github.com -Type A -Provider Google
 
 #>
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12;
